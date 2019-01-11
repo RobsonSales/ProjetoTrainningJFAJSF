@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <ui:decorate template="index.xhtml">
+        <ui:define name="centro">
+            <p:fieldset legend="Lista de Contatos">
+                    <h:form>
+                        <p:dataTable value="#{agendaBean.listaContatos}" var="lista">
+                            <p:column headerText="ID">
+                                <p:outputLabel value="#{lista.id}"/>
+                            </p:column>
+                            <p:column headerText="Nome">
+                                <p:outputLabel value="#{lista.nome}"/>
+                            </p:column>
+                            <p:column headerText="Endereço">
+                                <p:outputLabel value="#{lista.endereco}"/>
+                            </p:column>
+                            <p:column headerText="Cidade">
+                                <p:outputLabel value="#{lista.cidade}"/>
+                            </p:column>
+                            <p:column headerText="UF">
+                                <p:outputLabel value="#{lista.uf}"/>
+                            </p:column>
+                            <p:column headerText="Telefone">
+                                <p:outputLabel value="#{lista.telefone}"/>
+                            </p:column>
+                            <p:column headerText="Celular">
+                                <p:outputLabel value="#{lista.celular}"/>
+                            </p:column>
+                            <p:column headerText="Email">
+                                <p:outputLabel value="#{lista.email}"/>
+                            </p:column>
+                            <p:column headerText="Editar">
+                                <p:commandButton action="editarcontatos" value="Editar" actionListener="#{agendaBean.selecionaContatos()}"/>
+                            </p:column>
+                            <p:column headerText="Excluir">
+                                <p:commandButton action="excluircontatos"  value="Excluir" actionListener="#{agendaBean.selecionaContatos()}"/>
+                            </p:column>
+               
+                        </p:dataTable>
+                    </h:form>
+            </p:fieldset>
+        </ui:define>
+    </ui:decorate>
+</html>
+
